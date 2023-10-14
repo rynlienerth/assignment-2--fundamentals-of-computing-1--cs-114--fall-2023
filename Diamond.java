@@ -2,53 +2,59 @@ import java.util.Scanner;
 
 public class Diamond {
   public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-
+    int input;
+    Scanner scanner;
+    // Declare scanner and user input
     System.out.println("Enter a number");
-    int input = scanner.nextInt();
+    scanner = new Scanner (System.in);
+    input = scanner.nextInt();
 
-    int spaces = input - 1;
-    int astrix = 1;
 
-    if (input % 2 == 0 && input > 0) {
-      for (int i = 0; i < input; i += 2){
-        for (spaces = 0; spaces < (input-i) / 2; spaces++); {
-        System.out.print("  ");
+    //Checks to see if input is even or odd
+    if (input % 2 == 0) {
+      //Even Top half of Diamond
+      for (int i = 0; i < input; i++){
+        for (int spaces = 0; spaces < input - i - 1; spaces++) {
+        System.out.print(" ");
         }
-        for (astrix = 0; astrix <= i; astrix++) {
+        for (int astrix = 0; astrix <= i; astrix++) {
           System.out.print(" *");
         }
         System.out.println();
       }
-      for (int i = 0; i < input; i++) {
-        for (spaces = 0; spaces < (input - i) / 2; spaces++){
-          System.out.print("  ");
-      }
-      for (astrix = 0; astrix <= i; astrix++) {
-        System.out.print(" *");
+      //Even Bottom half of Diamond
+      for (int i = 0; i < input - 1; i++) {
+        for (int spaces = 0; spaces <= i; spaces++){
+          System.out.print(" ");
+          }
+        for (int astrix = 0; astrix < input - i - 1; astrix++) {
+          System.out.print(" *");
       }
       System.out.println();
     }
-  } else {
+    } else {
+      //Odd Top half of Diamond
       for (int i = 0; i <= input / 2; i++) {
-        for (spaces = 0; spaces < input / 2 - i; spaces++) {
+        for (int spaces = 0; spaces < input / 2 - i; spaces++) {
           System.out.print(" ");
         }
-        for (astrix = 0; astrix < 2 * i + 1; astrix++) {
+        for (int astrix = 0; astrix < 2 * i + 1; astrix++) {
           System.out.print("*");
         }
         System.out.println();
       }
+      //Odd Bottom half of Diamond
       for (int i = input / 2 - 1; i >= 0; i--){
-        for (spaces = 0; spaces < input / 2 - i; spaces++) {
+        for (int spaces = 0; spaces < input / 2 - i; spaces++) {
           System.out.print(" ");
         }
-        for (astrix = 0; astrix < 2 * i + 1; astrix++){
+        for (int astrix = 0; astrix < 2 * i + 1; astrix++){
           System.out.print("*");
         }
         System.out.println();
       }
   }
   scanner.close();
+
 }
 }
