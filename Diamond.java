@@ -8,8 +8,6 @@ public class Diamond {
     System.out.println("Enter a number");
     scanner = new Scanner (System.in);
     input = scanner.nextInt();
-
-
     //Checks to see if input is even or odd
     if (input % 2 == 0) {
       //Even Top half of Diamond
@@ -55,6 +53,5 @@ public class Diamond {
       }
   }
   scanner.close();
-
 }
 }
